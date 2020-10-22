@@ -18,22 +18,17 @@ function renderToScreen(elements) {
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault();
   renderToScreen([{ className: '', textContent: 'Loading...' }]);
-  fetch(`http://localhost:3001/weather?address=${weatherInput.value}`).then(
-    (res) => {
-      res.json().then((data) => {
-        if (data.error) {
-          renderToScreen([
-            { className: 'message--error', textContent: data.error },
-          ]);
-        } else {
-          const { location, forecast } = data;
-          renderToScreen([
-            { textContent: location },
-            { textContent: forecast },
-          ]);
-        }
-        return data;
-      });
-    },
-  );
+  fetch(`/weather?address=${weatherInput.value}`).then((res) => {
+    res.json().then((data) => {
+      if (data.error) {
+        renderToScreen([
+          { className: 'message--error', textContent: data.error },
+        ]);
+      } else {
+        const { location, forecast } = data;
+        renderToScreen([{ textContent: location }, { textContent: forecast }]);
+      }
+      return data;
+    });
+  });
 });
