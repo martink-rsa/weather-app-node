@@ -10,9 +10,7 @@ function renderToScreen(elements) {
     if (elements[i].className) {
       para.classList.add(elements[i].className);
     }
-
     para.textContent = elements[i].textContent;
-    console.log(elements[i]);
     renderArea.appendChild(para);
   }
 }

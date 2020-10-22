@@ -8,6 +8,8 @@ const msg = require('./utils/msg.js');
 
 const app = express();
 
+const port = process.env.PORT || 3001;
+
 // Define paths for express config
 const publicPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -80,6 +82,6 @@ app.get('*', (req, res) => {
 
 // Server
 
-app.listen(3001, () => {
-  console.log('Server is running on port 3001');
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
