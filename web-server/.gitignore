@@ -1,4 +1,0 @@
-.env*
-node_modules
-basic/node_modules
-web-server/node_modules
