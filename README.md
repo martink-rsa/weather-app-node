@@ -1,5 +1,3 @@
-# Node Weather App
-
 ## To install:
 
 1. Clone the repository
