@@ -8,7 +8,14 @@ const port = process.env.PORT || 3001;
 
 app.post('/', async (req, res) => {
   try {
+    // Staging
     fetch('https://api.netlify.com/build_hooks/60e44c82933ae134cffda9dd', {
+      method: 'POST',
+      body: '',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    // Production
+    fetch('https://api.netlify.com/build_hooks/615d45568e3dc599b8a18f0e', {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' },
